@@ -1,0 +1,15 @@
+### READ ME ###
+
+StraightBolt = 일직선으로 날아가는 EnemyBolt에 넣기
+EnemyPenguin = 일직선으로 날아가는 EnemyBolt를 사용하는 적에 넣기
+
+ReflectBolt = 3쿠션으로 날아가는 EnemyBolt에 넣기
+EnemyMole = 3쿠션으로 공격하는 EnemyBolt를 사용하는 적에 넣기
+
+LaserBolt = 일정시간 지속되는 레이저 EnemyBolt에 넣기
+EnemyFlower = 일정시간 지속되는 레이저를 쏘는 적에 넣기
+
+Gathering = 레이저 쏘기 전 기 모으는 이펙트
+Glow = 모인 기가 반짝이는 이펙트
+Circle = 레이저 나갈때 주변에 둥그렇게 기가 퍼지는 이펙트
+Fire = 전방 폭발 이펙트
