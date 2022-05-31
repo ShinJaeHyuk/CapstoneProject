@@ -1363,7 +1363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4a60a166ef988c54492949e9566596fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4a60a166ef988c54492949e9566596fc, type: 3}
       propertyPath: m_TagString
@@ -11893,7 +11893,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!4 &688254903 stripped
 Transform:
@@ -12424,14 +12424,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5a54487fc9a453f8c46df0902941ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 3
-  currentHp: 3
+  maxHp: 5
+  currentHp: 5
   hp1: {fileID: 1848903537}
   hp2: {fileID: 1694984021}
   hp3: {fileID: 464002665}
   hp4: {fileID: 1360805554}
   hp5: {fileID: 537265914}
-  Anim: {fileID: 0}
 --- !u!1 &721007714
 GameObject:
   m_ObjectHideFlags: 0
@@ -19523,7 +19522,7 @@ GameObject:
   - component: {fileID: 963245994}
   - component: {fileID: 963245993}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: bulletcount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19568,7 +19567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 700
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f44db067c2edf240ad4a68822bc3483, type: 2}
   m_sharedMaterial: {fileID: -1051338379819796719, guid: 6f44db067c2edf240ad4a68822bc3483, type: 2}
@@ -26153,7 +26152,6 @@ MonoBehaviour:
   hp3: {fileID: 0}
   hp4: {fileID: 0}
   hp5: {fileID: 0}
-  Anim: {fileID: 0}
 --- !u!114 &1171849992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33814,7 +33812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f3a9d63130d316f4fa89c717a14a4ec8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f3a9d63130d316f4fa89c717a14a4ec8, type: 3}
       propertyPath: m_TagString
@@ -34452,6 +34450,7 @@ GameObject:
   - component: {fileID: 1432763340}
   - component: {fileID: 1432763344}
   - component: {fileID: 1432763345}
+  - component: {fileID: 1432763346}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -34628,6 +34627,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1432763346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432763339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e79f456c55a345ae8f954a24ffae2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullettxt: {fileID: 963245993}
+  stagetxt: {fileID: 1694363651}
 --- !u!1001 &1440968944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36309,7 +36322,7 @@ GameObject:
   - component: {fileID: 1694363652}
   - component: {fileID: 1694363651}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: stagecount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36354,7 +36367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f44db067c2edf240ad4a68822bc3483, type: 2}
   m_sharedMaterial: {fileID: -1051338379819796719, guid: 6f44db067c2edf240ad4a68822bc3483, type: 2}
@@ -36523,7 +36536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2e7e8143db108b04f946266b19cb2144, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2e7e8143db108b04f946266b19cb2144, type: 3}
       propertyPath: m_TagString
@@ -41635,7 +41648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6260966173753891792, guid: e13b7d7d61d4e364bb3a69b258ae54b6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260966173753891792, guid: e13b7d7d61d4e364bb3a69b258ae54b6, type: 3}
       propertyPath: m_TagString

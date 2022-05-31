@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,7 +10,7 @@ public class Boss : Enemy
     public GameObject FireBall;
     public Transform FireballPort;
 
-    Vector3 lookVec; //플레이어 방향 예측
+    Vector3 lookVec; //???????? ???? ????
     Vector3 tauntVec;
     public bool isLook;
 
@@ -37,8 +37,8 @@ public class Boss : Enemy
         }
         if (isLook)
         {
-            lookVec = new Vector3(1, 0, 1) * 5f;
-            transform.LookAt(target.position + lookVec);
+            //lookVec = new Vector3(0, 0, 1) * 5f;
+            transform.LookAt(target.position );
 
         }
         else
@@ -48,7 +48,7 @@ public class Boss : Enemy
     }
     IEnumerator Think()
     {
-        yield return new WaitForSeconds(0.1f); // 얘 시간을 바꾸면 보스 난이도 바뀜
+        yield return new WaitForSeconds(0.1f); // ?? ?????? ?????? ???? ?????? ????
 
         int ranAction = Random.Range(0, 4);
         switch (ranAction)
@@ -58,13 +58,13 @@ public class Boss : Enemy
 
                 StartCoroutine(FireballShot());
                 break;
-                //파이어볼
+                //????????
             case 2:               
             case 3:
 
                 StartCoroutine(Taunt());
                 break;
-                //점프
+                //????
             
         }              
     }

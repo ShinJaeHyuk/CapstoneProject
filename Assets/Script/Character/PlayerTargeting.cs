@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerTargeting : MonoBehaviour
 {
     public static PlayerTargeting Instance
@@ -49,7 +50,7 @@ public class PlayerTargeting : MonoBehaviour
     public GameObject[] grenades;
     public int hasGrenade;
     public GameObject grenadeObj;
-
+    
     public bool grenadedown;
     
 
@@ -96,6 +97,7 @@ public class PlayerTargeting : MonoBehaviour
     {
         SetTarget();
         Grenade();
+        
 
     }
 
@@ -171,6 +173,7 @@ public class PlayerTargeting : MonoBehaviour
  
     void shoot()
     {
+        
         if (ShootCount != 0) {
             //dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;
             anim.SetTrigger("doAttack");
