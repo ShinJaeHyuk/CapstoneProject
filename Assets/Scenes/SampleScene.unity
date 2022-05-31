@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &43609418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4a60a166ef988c54492949e9566596fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4a60a166ef988c54492949e9566596fc, type: 3}
       propertyPath: m_TagString
@@ -19345,6 +19345,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19432,6 +19433,18 @@ MonoBehaviour:
   Player: {fileID: 1978124089}
   offsetY: 13
   offsetZ: -10
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e29ff94b0423a4fb4a70d7ab291153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963245991
 GameObject:
   m_ObjectHideFlags: 0
@@ -33658,7 +33671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f3a9d63130d316f4fa89c717a14a4ec8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f3a9d63130d316f4fa89c717a14a4ec8, type: 3}
       propertyPath: m_TagString
@@ -36367,7 +36380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2e7e8143db108b04f946266b19cb2144, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2e7e8143db108b04f946266b19cb2144, type: 3}
       propertyPath: m_TagString
@@ -41479,7 +41492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6260966173753891792, guid: e13b7d7d61d4e364bb3a69b258ae54b6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260966173753891792, guid: e13b7d7d61d4e364bb3a69b258ae54b6, type: 3}
       propertyPath: m_TagString
