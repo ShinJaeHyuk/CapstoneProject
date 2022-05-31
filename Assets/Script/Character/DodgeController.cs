@@ -98,7 +98,7 @@ public class DodgeController : MonoBehaviour
     private void Update()
     {
         currentCool += Time.deltaTime;
-        if (currentCool>=DodgeCool && !isdodge && Input.GetKey(KeyCode.Space))  //컴퓨터 테스트를 위해 space로 발동시킴. 버튼 누를거면 마지막 조건 빼면 됨
+        if (currentCool>=DodgeCool && !isdodge && Input.GetKey(KeyCode.Space))  //?????? ???????? ???? space?? ????????. ???? ???????? ?????? ???? ???? ??
         {
             isdodge = true;
             currentCool = 0;
@@ -117,7 +117,7 @@ public class DodgeController : MonoBehaviour
     void Dodge()
     {
         
-        PlayerMovement.Instance.moveSpeed = 15.0f;
+        PlayerMovement.Instance.moveSpeed = 40.0f;
         anim.SetTrigger("doDodge");
         isdodge = true;
 
