@@ -26,23 +26,19 @@ public class CameraMovement : MonoBehaviour
     private static CameraMovement instance;
 
     public GameObject Player;
-    public float offsetY = 8f;
-    public float offsetZ = -2f;
+    public float offsetX = 0f;
+    public float offsetY = 7f;
+    public float offsetZ = -9f;
 
     Vector3 cameraPosition;
+    Vector3 PlayerPos;
     // Start is called before the first frame update
     
     // Update is called once per frame
     void LateUpdate()
     {
-
-        transform.position = Player.transform.position+ new Vector3(0, 4, -12);
-        /*
-        cameraPosition.y = Player.transform.position.y + offsetY;
-        cameraPosition.z = Player.transform.position.z + offsetZ;
-
-        transform.position = cameraPosition;
-        */
+        PlayerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
+        transform.position = Vector3.Lerp(transform.position, PlayerPos, Time.deltaTime * 2f);
     }
 
     public void CameraNextRoom()
