@@ -32,7 +32,7 @@ public class StageManager : MonoBehaviour
         public List<Transform> StartPosition = new List<Transform>();
     }
 
-    public StartPositionArray[] startPositionArrays; //0, 1, 2
+    public StartPositionArray[] startPositionArrays; //0, 1
     //startpositionarrays[0] 1~10
     //startpositionarrays[1] 11~20
     //방 20개 만들어 각 방의 시작 위치를 입력함
@@ -40,7 +40,7 @@ public class StageManager : MonoBehaviour
     public List<Transform> StartPositionBoss = new List<Transform>(); // 중간보스방
     public Transform StartPositionLastBoss;
 
-    public int currentStage = 0; //현재 방 위치
+    public int currentStage = 1; //현재 방 위치
     int LastStage = 10; //라스트 보스 방
 
     // Start is called before the first frame update
