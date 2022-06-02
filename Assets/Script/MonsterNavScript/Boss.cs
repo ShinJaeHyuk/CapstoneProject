@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class Boss : Enemy
 {
-
-    Rigidbody rigid;
+    
     public GameObject FireBall;
     public Transform FireballPort;
 
@@ -17,12 +16,12 @@ public class Boss : Enemy
     // Start is called before the first frame update
     void Awake()
     {
-
+        
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-
+        
         nav.isStopped = true;
         StartCoroutine(Think());
     }

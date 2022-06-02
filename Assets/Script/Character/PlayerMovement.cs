@@ -56,11 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
+    /*
     void GameOver()
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
+    */
 
     private void OnTriggerEnter(Collider other)
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -37,6 +38,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if(SceneManager.GetActiveScene().name == "Test")
+        {
+            PlayerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + 20f, Player.transform.position.z + 10f);
+            transform.position = Vector3.Lerp(transform.position, PlayerPos, Time.deltaTime * 2f);
+        }
         PlayerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
         transform.position = Vector3.Lerp(transform.position, PlayerPos, Time.deltaTime * 2f);
     }
