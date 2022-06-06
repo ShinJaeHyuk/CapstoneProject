@@ -13,6 +13,7 @@ TagManager:
   - OnlyWall
   - enemybolt
   - JustDodge
+  - soundmanager
   layers:
   - Default
   - TransparentFX

@@ -25,31 +25,35 @@ public class CameraMovement : MonoBehaviour
     }
 
     private static CameraMovement instance;
-
+        
     public GameObject Player;
-    public float offsetX = 0f;
-    public float offsetY = 7f;
-    public float offsetZ = -9f;
-
-    Vector3 cameraPosition;
-    Vector3 PlayerPos;
-    // Start is called before the first frame update
     
-    // Update is called once per frame
-    void LateUpdate()
+    public float offsetX;
+
+    public float offsetY;
+    public float offsetZ;
+        
+    public Vector3 PlayerPos;
+    // Start is called before the first frame update
+
+    private void Start()
     {
-        if(SceneManager.GetActiveScene().name == "Test")
-        {
-            PlayerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + 20f, Player.transform.position.z + 10f);
-            transform.position = Vector3.Lerp(transform.position, PlayerPos, Time.deltaTime * 2f);
-        }
+        
+    }
+    // Update is called once per frame
+    /*void LateUpdate()
+    {
+        
         PlayerPos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
         transform.position = Vector3.Lerp(transform.position, PlayerPos, Time.deltaTime * 2f);
     }
+    */
 
-    public void CameraNextRoom()
+    private void FixedUpdate()
     {
-        //fade in & out
-        cameraPosition.x = Player.transform.position.x;
+        Vector3 pos = new Vector3(Player.transform.position.x + offsetX, Player.transform.position.y + offsetY, Player.transform.position.z + offsetZ);
+        this.transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * 2f);
     }
+
+
 }

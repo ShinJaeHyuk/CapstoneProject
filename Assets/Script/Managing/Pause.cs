@@ -72,7 +72,9 @@ public class Pause : MonoBehaviour
     void goOpen()
     {
         pausemenu.SetActive(false);
-        SceneManager.LoadScene("OpenScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+        return;
     }
     
 }

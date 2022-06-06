@@ -36,7 +36,6 @@ public class Boss : Enemy
         }
         if (isLook)
         {
-            //lookVec = new Vector3(0, 0, 1) * 5f;
             transform.LookAt(target.position );
 
         }
@@ -71,31 +70,33 @@ public class Boss : Enemy
     IEnumerator FireballShot()
     {
         anim.SetTrigger("doShot");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
 
         GameObject instantFireBall = Instantiate(FireBall, FireballPort.position, FireballPort.rotation);
-        
+        Rigidbody rigidbullet = instantFireBall.GetComponent<Rigidbody>();
+        rigidbullet.velocity = transform.forward * 20;
 
+        yield return new WaitForSeconds(4.0f);
         StartCoroutine(Think());
     }
     IEnumerator Taunt()
     {
-        tauntVec = target.position + lookVec;
+        tauntVec = target.position;
 
         isLook = false;
         nav.isStopped = false;
         boxCollider.enabled = false;
         anim.SetTrigger("doTaunt");
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
         meleeArea.enabled = true;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
 
         meleeArea.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
         isLook = true;
         nav.isStopped = true;
         boxCollider.enabled = true;

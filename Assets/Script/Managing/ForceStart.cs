@@ -12,7 +12,7 @@ public class ForceStart : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.CompareTo("OpenScene") != 0)
         {
-            SceneManager.LoadScene("OpenScene");
+            SceneManager.LoadScene("Main");
         }
     }
 }

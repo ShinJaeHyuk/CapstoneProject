@@ -33,8 +33,7 @@ public class PlayerHpBar : MonoBehaviour
     public GameObject hp1;
     public GameObject hp2;
     public GameObject hp3;
-    public GameObject hp4;
-    public GameObject hp5;
+    
 
 
     //public Slider hpBar;
@@ -46,9 +45,7 @@ public class PlayerHpBar : MonoBehaviour
         hp1.GetComponent<Image>().enabled = true;
         hp2.GetComponent<Image>().enabled = true;
         hp3.GetComponent<Image>().enabled = true;
-        hp4.GetComponent<Image>().enabled = true;
-
-        hp5.GetComponent<Image>().enabled = true;
+       
 
       
     }
@@ -62,12 +59,7 @@ public class PlayerHpBar : MonoBehaviour
 
         switch (currentHp)
         {
-            case 4:
-                hp5.GetComponent<Image>().enabled = false;
-                break;
-            case 3:
-                hp4.GetComponent<Image>().enabled = false;
-                break;
+            
             case 2:
                 hp3.GetComponent<Image>().enabled = false;
                 break;

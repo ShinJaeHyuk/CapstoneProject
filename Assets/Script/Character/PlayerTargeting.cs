@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,11 @@ public class PlayerTargeting : MonoBehaviour
     int prevTargetIndex = 0;
     public LayerMask layerMask;
     
+    public AudioClip audioshot;
+    public AudioClip audioblank;
+    AudioSource audioSource2;
+    AudioSource audioSource3;
+    
     public int ShootCount = 10;
 
     public float atkSpd = 1f;
@@ -68,7 +74,7 @@ public class PlayerTargeting : MonoBehaviour
             {
                 if(MonsterList[i] == null) { return; }
                 RaycastHit hit;
-                bool isHit = Physics.Raycast(transform.position, MonsterList[i].transform.GetChild(0).position - transform.position, out hit, 20f, layerMask);
+                bool isHit = Physics.Raycast(transform.position, MonsterList[i].transform.position - transform.position, out hit, 20f, layerMask);
 
                 if(isHit && hit.transform.CompareTag("Monster"))
                 {
@@ -78,7 +84,7 @@ public class PlayerTargeting : MonoBehaviour
                 {
                     Gizmos.color = Color.red;
                 }
-                Gizmos.DrawRay(transform.position, MonsterList[i].transform.GetChild(0).position - transform.position);
+                Gizmos.DrawRay(transform.position, MonsterList[i].transform.position - transform.position);
             }
         }
     }
@@ -87,9 +93,12 @@ public class PlayerTargeting : MonoBehaviour
     {
         btn.onClick.AddListener(shoot);
         dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;
-
+                
         anim = GetComponentInChildren<Animator>();
-
+        
+        audioSource2 = GetComponent<AudioSource>();
+        audioSource3 = GetComponent<AudioSource>();
+        
         
     }
     // Start is called before the first frame update
@@ -134,10 +143,10 @@ public class PlayerTargeting : MonoBehaviour
             for (int i = 0; i < MonsterList.Count; i++)
             {
                 if(MonsterList[i] == null) { return; }
-                currentDist = Vector3.Distance(transform.position, MonsterList[i].transform.GetChild(0).position);
+                currentDist = Vector3.Distance(transform.position, MonsterList[i].transform.position);
 
                 RaycastHit hit;
-                bool isHit = Physics.Raycast(transform.position, MonsterList[i].transform.GetChild(0).position - transform.position, out hit, 20f, layerMask);
+                bool isHit = Physics.Raycast(transform.position, MonsterList[i].transform.position - transform.position, out hit, 20f, layerMask);
 
                 if (isHit && hit.transform.CompareTag("Monster"))
                 {
@@ -177,11 +186,20 @@ public class PlayerTargeting : MonoBehaviour
         if (ShootCount != 0) {
             //dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;
             anim.SetTrigger("doAttack");
+            audioSource2.clip = audioshot;
+            
+
+            audioSource2.Play();
             Instantiate(PlayerBolt, AttackPoint.position, AttackPoint.rotation);
             ShootCount--;
             Debug.Log(ShootCount);
         }
-        
+        else if(ShootCount == 0)
+        {
+            audioSource3.clip = audioblank;
+            audioSource3.Play();
+        }
+
     }
            
 }

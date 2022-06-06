@@ -80,7 +80,7 @@ public class StageManager : MonoBehaviour
             }
         }
 
-        CameraMovement.Instance.CameraNextRoom();
+        //CameraMovement.Instance.CameraNextRoom();
     }
         
 }

@@ -9,7 +9,7 @@ public class TextManage : MonoBehaviour
     //public TMPro.TMP_Text bullettxt;
     //public TMPro.TMP_Text stagetxt;
     public TextMeshProUGUI bullettxt;
-    public TextMeshProUGUI stagetxt;
+    
     //public TextMeshProUGUI stagetxt1;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class TextManage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stagetxt.text = " " + StageManager.Instance.currentStage.ToString();
+        
         bullettxt.text = " " +  PlayerTargeting.Instance.ShootCount.ToString();
 
         //stagetxt.text = "" + StageManager.Instance.currentStage;

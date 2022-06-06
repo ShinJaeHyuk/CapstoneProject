@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
     public Animator anim;
     public Rigidbody rigid;
     public BoxCollider  boxCollider;
+    public GameObject VictoryPopup;
 
 
     
@@ -211,16 +212,25 @@ public class Enemy : MonoBehaviour
             reactVec = reactVec.normalized;
             reactVec += Vector3.up;
             rigid.AddForce(reactVec * 5, ForceMode.Impulse);
-            
-            
+
+
             PlayerTargeting.Instance.MonsterList.Remove(transform.gameObject);
+            RoomCondition.Instance.monCount -=1;
+
             Debug.Log(PlayerTargeting.Instance.MonsterList.Count);
+            Debug.Log(RoomCondition.Instance.monCount);
+            
+
             
             
             PlayerTargeting.Instance.TargetIndex = -1;
             if(enemyType != Type.boss)
             {
                 Destroy(this.gameObject, 4);
+            }
+            else if(enemyType == Type.boss)
+            {
+                VictoryPopup.SetActive(true);
             }
 
         }

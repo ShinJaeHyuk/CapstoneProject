@@ -6,9 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OpenScene.unity
-    guid: ab3d22f0d595e4005aa8d78ab41a58ec
+    path: Assets/Scenes/SceneList/Main.unity
+    guid: 95af138d06693a9458086537a4d0bcf0
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/SceneList/MainMenu.unity
+    guid: e20e74a53d6604b48b6207663a4c1cf4
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map01.unity
+    guid: 3de642eaf3fd7564e8ab1e7f9a18c9c1
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map02.unity
+    guid: 454b7a87c0bcb0d4e9f0674568c0242e
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map03.unity
+    guid: f4df9f57a9bf63646a583e3c868ed863
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map04.unity
+    guid: 696d5560ece23a04b8fb9166185db729
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map05.unity
+    guid: f639ad3b8b8f6604d82df01b16a9d5fc
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map06.unity
+    guid: 65fcf5a665a5a734c9e7eef69cbd370c
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map07.unity
+    guid: bab60733f43d3ba45aeb86ca36c12fea
+  - enabled: 1
+    path: Assets/Scenes/SceneList/Map08.unity
+    guid: 0c8f68e8c97e87b4aa25d87fd8161d0a
   m_configObjects: {}
