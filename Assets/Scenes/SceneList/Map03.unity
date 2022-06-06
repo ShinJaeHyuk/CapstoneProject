@@ -3436,6 +3436,7 @@ MonoBehaviour:
   playerInThisRoom: 0
   isClearRoom: 0
   nextroom: {fileID: 169434632}
+  monCount: 0
 --- !u!54 &1469946221
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4421,6 +4422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6412487507863311711, guid: cd20f75ec6854184f9636bdead5c1eda, type: 3}
+      propertyPath: currentstage
+      value: 
+      objectReference: {fileID: 62461741}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd20f75ec6854184f9636bdead5c1eda, type: 3}
 --- !u!224 &2010805177 stripped
