@@ -1,2 +1,2 @@
-# 한 발
+# One Shot
 Mobile Game for the Capstone Project
