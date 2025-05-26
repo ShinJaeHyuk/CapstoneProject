@@ -7,7 +7,6 @@ public class ReflectBolt : MonoBehaviour
     Rigidbody rb;
     Vector3 NewDir;
     int bounceCnt = 3;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +14,6 @@ public class ReflectBolt : MonoBehaviour
         NewDir = transform.up;
         rb.velocity = NewDir * -10f;
     }
-
-    
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("JustDodge")) {
@@ -25,10 +21,8 @@ public class ReflectBolt : MonoBehaviour
             Debug.Log(PlayerTargeting.Instance.ShootCount);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
-    {
-       
+    {       
         if (collision.transform.CompareTag("Border"))
         {
             bounceCnt--;
@@ -36,19 +30,13 @@ public class ReflectBolt : MonoBehaviour
             {
                 NewDir = Vector3.Reflect(NewDir, collision.contacts[0].normal);
                 rb.velocity = NewDir * -10f;
-
             }
             else
             {
                 Destroy(gameObject, 0.1f);
             }
-        }
-        
+        }        
     }
-
-
-   
-
     // Update is called once per frame
     void Update()
     {

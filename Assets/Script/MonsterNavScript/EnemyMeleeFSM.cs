@@ -10,39 +10,30 @@ public class EnemyMeleeFSM : EnemyBase
         Move,
         Attack,
     };
-
     public State currentState = State.Idle;
-
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
-
     protected void Start()
     {
         base.Start();
         parentRoom = transform.parent.transform.parent.gameObject;
         Debug.Log("Start - State :" + currentState.ToString());
-
         StartCoroutine(FSM());
     }
     protected virtual void InitMonster() { }
-
     protected virtual IEnumerator FSM()
     {
         yield return null;
-
         while (!parentRoom.GetComponent<RoomCondition>().playerInThisRoom)
         {
             yield return Delay500;
         }
-
         InitMonster();
-
         while (true)
         {
             yield return StartCoroutine(currentState.ToString());
         }
     }
-
     protected virtual IEnumerator Idle()
     {
         yield return null;
@@ -50,7 +41,6 @@ public class EnemyMeleeFSM : EnemyBase
         {
             Anim.SetTrigger("Idle");
         }
-
         if (CanAtkStateFun())
         {
             if (canAtk)
@@ -68,35 +58,27 @@ public class EnemyMeleeFSM : EnemyBase
             currentState = State.Move;
         }
     }
-
     protected virtual void AtkEffect() { }
-
     protected virtual IEnumerator Attack()
     {
         yield return null;
-        //Atk
-
         nvAgent.stoppingDistance = 0f;
         nvAgent.isStopped = true;
         nvAgent.SetDestination(Player.transform.position);
         yield return Delay500;
-
         nvAgent.isStopped = false;
         nvAgent.speed = 30f;
         canAtk = false;
-
         if (!Anim.GetCurrentAnimatorStateInfo(0).IsName("stun"))
         {
             Anim.SetTrigger("Attack");
         }
         AtkEffect();
         yield return Delay500;
-
         nvAgent.speed = moveSpeed;
         nvAgent.stoppingDistance = attackRange;
         currentState = State.Idle;
     }
-
     protected virtual IEnumerator Move()
     {
         yield return null;

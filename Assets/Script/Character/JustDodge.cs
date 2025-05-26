@@ -21,22 +21,16 @@ public class JustDodge : MonoBehaviour
             return instance;
         }
     }
-
     private static JustDodge instance;
-
     public GameObject player;
     public float z = -9f;
-    public float y = 1.5f;
-    
+    public float y = 1.5f;    
     Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    
-
     // Update is called once per frame
     void LateUpdate()
     {
@@ -44,7 +38,6 @@ public class JustDodge : MonoBehaviour
         position.y = player.transform.position.y + y;
         position.x = player.transform.position.x;
         position.z = player.transform.position.z;
-
         transform.position = position;
     }
 }

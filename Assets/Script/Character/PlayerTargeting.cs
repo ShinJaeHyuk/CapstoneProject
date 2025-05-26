@@ -1,9 +1,7 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class PlayerTargeting : MonoBehaviour
 {
@@ -23,9 +21,7 @@ public class PlayerTargeting : MonoBehaviour
             return instance;
         }
     }
-
     private static PlayerTargeting instance;
-
     Animator anim;
     public bool getATarget = false;
     float currentDist = 0; //current distance
@@ -34,38 +30,26 @@ public class PlayerTargeting : MonoBehaviour
     int closeDistIndex = 0; //closest index
     public int TargetIndex = -1; //index to target
     int prevTargetIndex = 0;
-    public LayerMask layerMask;
-    
+    public LayerMask layerMask;    
     public AudioClip audioshot;
     public AudioClip audioblank;
     AudioSource audioSource2;
-    AudioSource audioSource3;
-    
+    AudioSource audioSource3;    
     public int ShootCount = 10;
-
     public float atkSpd = 1f;
-
     public int bulletDamage = 10;
-
     public float bulletSpeed = 1.5f;
     //const float shootDelay = 0.3f;
     //float shootTimer = 0;
-    public Vector3 dir; //?????? ???????? ????
-
-    
+    public Vector3 dir; 
     public GameObject[] grenades;
     public int hasGrenade;
-    public GameObject grenadeObj;
-    
-    public bool grenadedown;
-    
-
+    public GameObject grenadeObj;    
+    public bool grenadedown;  
     public Button btn;
-
     public List<GameObject> MonsterList = new List<GameObject>(); //monster list
     public GameObject PlayerBolt;
     public Transform AttackPoint;
-
     void OnDrawGizmos()
     {
         if (getATarget)
@@ -88,28 +72,20 @@ public class PlayerTargeting : MonoBehaviour
             }
         }
     }
-
     void Start()
     {
         btn.onClick.AddListener(shoot);
-        dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;
-                
-        anim = GetComponentInChildren<Animator>();
-        
+        dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;                
+        anim = GetComponentInChildren<Animator>();        
         audioSource2 = GetComponent<AudioSource>();
         audioSource3 = GetComponent<AudioSource>();
-        
-        
     }
     // Start is called before the first frame update
     void Update()
     {
         SetTarget();
         Grenade();
-        
-
     }
-
     void Grenade()
     {
         if (hasGrenade == 0)
@@ -127,10 +103,6 @@ public class PlayerTargeting : MonoBehaviour
             grenades[hasGrenade].SetActive(false);
         }
     }
-
-    // Update is called once per frame
-    
-    
     void SetTarget()
     {
         if (MonsterList.Count != 0)
@@ -139,15 +111,12 @@ public class PlayerTargeting : MonoBehaviour
             currentDist = 0f;
             closeDistIndex = 0;
             TargetIndex = -1;
-
             for (int i = 0; i < MonsterList.Count; i++)
             {
                 if(MonsterList[i] == null) { return; }
                 currentDist = Vector3.Distance(transform.position, MonsterList[i].transform.position);
-
                 RaycastHit hit;
                 bool isHit = Physics.Raycast(transform.position, MonsterList[i].transform.position - transform.position, out hit, 20f, layerMask);
-
                 if (isHit && hit.transform.CompareTag("Monster"))
                 {
                     if (TargetDist >= currentDist)
@@ -160,35 +129,27 @@ public class PlayerTargeting : MonoBehaviour
                         }
                     }
                 }
-
                 if (closetDist >= currentDist)
                 {
                     closeDistIndex = i;
                     closetDist = currentDist;
                 }
             }
-
             if (TargetIndex == -1)
             {
                 TargetIndex = closeDistIndex;
             }
-
             closetDist = 100f;
             TargetDist = 100f;
             getATarget = true;
         }
-    }
-
- 
+    } 
     void shoot()
-    {
-        
+    {        
         if (ShootCount != 0) {
             //dir = new Vector3(AttackPoint.position.x, 0, AttackPoint.position.z - transform.position.z).normalized;
             anim.SetTrigger("doAttack");
             audioSource2.clip = audioshot;
-            
-
             audioSource2.Play();
             Instantiate(PlayerBolt, AttackPoint.position, AttackPoint.rotation);
             ShootCount--;
@@ -199,7 +160,5 @@ public class PlayerTargeting : MonoBehaviour
             audioSource3.clip = audioblank;
             audioSource3.Play();
         }
-
-    }
-           
+    }           
 }
